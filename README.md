@@ -2,6 +2,13 @@
 
 Please downlaod the pretrain model (https://docs.google.com/uc?export=download&id=0B2UgaM91sqeAN0dJb05jWThJUUk) into the project root folder.
 
+clone caffe
+```
+git clone https://github.com/BVLC/caffe.git windows-caffe
+cd windows-caffe
+git checkout windows
+```
+
 To build with windows caffe, the installtion path is set to default.
 
 Here are the other options when building caffe
