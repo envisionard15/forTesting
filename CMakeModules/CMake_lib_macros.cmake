@@ -18,18 +18,18 @@ ENDIF()
 ENDMACRO()
 
 MACRO( INCLUDE_PACKAGE_CVMLAUX )
-# FIND_PACKAGE( Boost COMPONENTS atomic chrono date_time filesystem python system thread )
-# FOREACH( _pkg ZLIB gflags glog OpenCV protobuf HDF5 OpenBLAS LevelDB LMDB Snappy )
-# 	FIND_PACKAGE( ${_pkg} )
-# ENDFOREACH()
-FIND_PACKAGE( Caffe REQUIRED)
-
+FIND_PACKAGE( Boost COMPONENTS atomic chrono date_time filesystem python system thread )
+FIND_PACKAGE( Caffe REQUIRED )
+FIND_PACKAGE( OpenCV REQUIRED )
 SET( CVMLAUX_INCLUDE_DIRS
+	${Boost_INCLUDE_DIR}
 	${Caffe_INCLUDE_DIRS}
+	${OpenCV_INCLUDE_DIRS}
 )
 MESSAGE( "CAFFE INCLUDE DIRS -> ${Caffe_INCLUDE_DIRS}" )
 SET( CVMLAUX_LIBRARIES
 	${Caffe_LIBRARIES}
+	${OpenCV_LIBRARIES}
 )
 
 MESSAGE( "CAFFE Libraries -> ${Caffe_LIBRARIES}" )

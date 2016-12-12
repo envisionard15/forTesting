@@ -5,16 +5,7 @@ using namespace caffe;
 #include <opencv2/highgui/highgui.hpp>
 #include <NetConfig.h>
 using namespace cv;
-
-//FIXME: Without this, it will throw LNK2019: unresolved external symbol "void __cdecl boost::throw_exception(class std::exception const &)" 
-namespace boost
-{
-#ifdef BOOST_NO_EXCEPTIONS
-void throw_exception( std::exception const & e ){
-    throw 11; // or whatever
-};
-#endif
-}
+#include <boost/shared_ptr.hpp>
 
 int main(int argc, char** argv) {
     cv::Mat image = imread(DEEP_DRIVE_TEST_IMAGE);   // Read the file
